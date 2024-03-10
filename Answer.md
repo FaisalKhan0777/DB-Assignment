@@ -28,17 +28,24 @@ For e.g : SQL syntax for creating a foreign key constraint:
 
 --------------------------------------------
 ALTER TABLE Product
+
 ADD CONSTRAINT FK_Product_Category
+
 FOREIGN KEY (category_id)
+
 REFERENCES Product_Category(category_id);
+
 -------------------------------------------
 
 With this foreign key constraint in place, whenever we try to insert or update a row in the "Product" table, the database will automatically verify that the value in the "category_id" column exists in the "Product_Category" table. If the category ID does not exist, the operation will fail and ensuring that each product has a valid category assigned to it.
 
 2.) NOT NULL Constraint: Make the "category_id" column in the "Product" table a NOT NULL column. This guarantees that every product must have a category assigned to it, preventing the insertion of NULL values.
+
 --------------------------------------
 ALTER TABLE Product
+
 MODIFY category_id INT NOT NULL
+
 --------------------------------------
 
 
